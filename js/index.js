@@ -7,7 +7,7 @@ let path = require('path');
 const socket = io(http);
 
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, '..', '/views/index.html'));
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 socket.on('connection', (socket) => {
