@@ -29,6 +29,7 @@
       message: message,
       user: username
     }).then(function(docRef) {
+      window.scrollTo(0,document.querySelector("#messages").scrollHeight);
       console.log('data sent')
     }).catch(function(e) {
       console.log('error adding doc: ', e)
