@@ -29,7 +29,7 @@
       message: message,
       user: username
     }).then(function(docRef) {
-      window.scrollTo(0,document.querySelector("#messages").scrollHeight);
+      window.scrollTo(0,document.querySelector(".chatbox").scrollHeight);
       console.log('data sent')
     }).catch(function(e) {
       console.log('error adding doc: ', e)
@@ -44,7 +44,7 @@
         querySnapshot.docs.forEach(doc => {
           messages.push(doc.data());
           let newMessage = document.createElement('li')
-          newMessage.textContent = doc.data().message
+          newMessage.textContent = `${doc.data().user}: ${doc.data().message}`
           messagesList.append(newMessage)
         });
       });
