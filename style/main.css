@@ -1,11 +1,17 @@
-#messages {
+.container
+{
+  height:70vh;
+  overflow: auto;
+}
+
+  #messages {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-ul #messages {
-    height:90vh;
+ul#messages
+{
 }
 
 #messages li {
