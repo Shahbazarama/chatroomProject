@@ -14,9 +14,26 @@
   margin-bottom: 20px;
 }
 
+/*Username stlying */
+body,
+#txt,
+#hide{
+  font:inherit;
+  margin:0;
+  padding:0;
+}
+#txt{
+  border:none;
+  color:#888;
+  min-width:10px;
+}
+#hide{
+  display:none;
+  white-space:pre;
+}
+
 .user-ctrl
 {
-  display: inline;
   min-width: 0;
 }
 
