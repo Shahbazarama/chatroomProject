@@ -1,23 +1,45 @@
 let express = require('express');
 let app = express();
 let http = require('http').Server(app);
-let port = process.env.PORT || 8000;
-let io = require('socket.io')(http);
+let io = require('socket.io');
 let path = require('path');
 
 app.use(express.static(__dirname + '/js'));
 
+const socket = io(http);
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(message){
-    io.emit('chat message', message)
+socket.on('connection', (socket) => {
+  console.log('user.connected')
+})
+
+socket.on('connection', (socket) => {
+  console.log('user.connected')
+
+  socket.on('disconnect', () => {
+    console.log('disconnected');
   })
 })
+//
+// app.get('/', function (req, res) {
+//   //
+// })
+
+
+
+
+
+
+
+//////////////
+let port = process.env.PORT || 80;
 
 http.listen(port, function() {
   console.log('Listening on port', port);
+
+
 });
+module.exports = app

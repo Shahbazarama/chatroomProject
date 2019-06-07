@@ -2,7 +2,7 @@ FROM node:10-alpine
 
 WORKDIR /opt/app
 
-ENV PORT=8000
+ENV PORT=80
 
 RUN echo 'set -e' >> /boot.sh
 
