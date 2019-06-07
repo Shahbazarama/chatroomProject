@@ -1,4 +1,5 @@
-(function(){
+(function() {
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyC4WDPJbCsdO3FCf7qhm20z3gDfxW07xa0",
@@ -14,11 +15,12 @@
 
   var db = firebase.firestore();
 
+  const messagesList = document.getElementById('messages')
   const usernameField = document.getElementById('userField')
   const messageField = document.getElementById('messageField')
   const sendMessageButton = document.getElementById('sendMessageButton')
 
-  sendMessageButton.addEventListener('click', function(e){
+  sendMessageButton.addEventListener('click', function(e) {
     const username = usernameField.value
     const message = messageField.value
 
@@ -33,14 +35,19 @@
     })
   })
 
-  db.collection("Messages")
-    .onSnapshot(function(querySnapshot) {
-        var messages = [];
-        querySnapshot.forEach(function(doc) {
-            messages.push(doc.data().message);
+  // Happens once on page load to display previous messages to new users
+  function loadAllMessages() {
+    const messages = [];
+    db.collection('Messages').get()
+      .then(querySnapshot => {
+        querySnapshot.docs.forEach(doc => {
+          messages.push(doc.data());
+          let newMessage = document.createElement('li')
+          newMessage.textContent = doc.data().message
+          messagesList.append(newMessage)
         });
-        console.log("Current messages: ", messages.join(", "));
-    });
-
+      });
+  }
+  window.onload = loadAllMessages
 
 }());
