@@ -18,6 +18,9 @@
   "homepage": "https://github.com/Shahbazarama/chatroomProject#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-validation": "^1.0.2",
+    "install": "^0.12.2",
+    "npm": "^6.9.0",
     "socket.io": "^2.2.0"
   }
 }
