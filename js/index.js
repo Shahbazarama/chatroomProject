@@ -18,10 +18,10 @@ socket.on('connection', (socket) =>
     console.log('disconnected');
   })
 })
-
-app.get('/', function (req, res) {
-  res.redirect('/views/index.html');
-})
+//
+// app.get('/', function (req, res) {
+//   //
+// })
 
 
 
