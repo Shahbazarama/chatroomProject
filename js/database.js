@@ -29,7 +29,7 @@
       message: message,
       user: username
     }).then(function(docRef) {
-      console.log('doc written with ID: ', docRef.id)
+      console.log('data sent')
     }).catch(function(e) {
       console.log('error adding doc: ', e)
     })
@@ -38,7 +38,7 @@
   // Happens once on page load to display previous messages to new users
   function loadAllMessages() {
     const messages = [];
-    db.collection('Messages').get()
+    db.collection('Messages').orderBy('date', 'desc').limit(7).get()
       .then(querySnapshot => {
         querySnapshot.docs.forEach(doc => {
           messages.push(doc.data());
