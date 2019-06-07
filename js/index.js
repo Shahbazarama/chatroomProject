@@ -2,10 +2,6 @@ let express = require('express');
 let app = express();
 let http = require('http').Server(app);
 let io = require('socket.io');
-<<<<<<< HEAD
-let path = require('path');
-=======
->>>>>>> 3d02e0a1b21e525ce2912809df6a2b133563b89a
 
 const socket = io(http);
 
