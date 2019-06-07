@@ -3,5 +3,6 @@
 }
 
 #sendField {
+  position: fixed;
   bottom: 0;
 }
