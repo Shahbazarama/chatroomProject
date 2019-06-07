@@ -22,14 +22,14 @@
 
   sendMessageButton.addEventListener('click', function(e) {
     const username = usernameField.value
-    const message = messageField.value
+    const messageText = messageField.value
 
     db.collection('Messages').add({
       date: firebase.firestore.Timestamp.fromDate(new Date()),
-      message: message,
+      message: messageText,
       user: username
     }).then(function(docRef) {
-      window.scrollTo(0,document.querySelector(".chatbox").scrollHeight);
+      window.scrollTo(0, document.querySelector("#chatbox").scrollHeight);
       console.log('data sent')
     }).catch(function(e) {
       console.log('error adding doc: ', e)
@@ -41,7 +41,7 @@
     const messages = [];
     db.collection('Messages').orderBy('date', 'desc').limit(7).get()
       .then(querySnapshot => {
-        querySnapshot.docs.forEach(doc => {
+        querySnapshot.docs.slice().reverse().forEach(doc => {
           messages.push(doc.data());
           let newMessage = document.createElement('li')
           newMessage.textContent = `${doc.data().user}: ${doc.data().message}`
