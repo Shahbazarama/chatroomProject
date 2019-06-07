@@ -22,19 +22,23 @@
   const sendMessageButton = document.getElementById('sendMessageButton')
 
   sendMessageButton.addEventListener('click', function(e) {
-    const username = usernameField.value
-    const messageText = messageField.value
+    if (messageField.value.trim() !== "") {
 
-    db.collection('Messages').add({
-      date: firebase.firestore.Timestamp.fromDate(new Date()),
-      message: messageText,
-      user: username
-    }).then(function(docRef) {
-      chatbox.scrollTo(0, document.querySelector("#chatbox").scrollHeight);
-      console.log('data sent')
-    }).catch(function(e) {
-      console.log('error adding doc: ', e)
-    })
+
+      const username = usernameField.value
+      const messageText = messageField.value
+
+      db.collection('Messages').add({
+        date: firebase.firestore.Timestamp.fromDate(new Date()),
+        message: messageText,
+        user: username
+      }).then(function(docRef) {
+        chatbox.scrollTo(0, document.querySelector("#chatbox").scrollHeight);
+        console.log('data sent')
+      }).catch(function(e) {
+        console.log('error adding doc: ', e)
+      })
+    }
   })
 
   // Happens once on page load to display previous messages to new users
