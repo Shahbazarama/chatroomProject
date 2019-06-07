@@ -4,9 +4,12 @@
   padding: 0;
 }
 
+#messages ul {
+    height:90vh; 
+}
+
 #messages li {
   padding: 5px 10px;
-  height:90vh; 
   overflow: auto;
 }
 
