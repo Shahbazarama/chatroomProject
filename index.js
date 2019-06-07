@@ -14,7 +14,7 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   socket.on('chat message', function(message){
-    console.log('message: ' + message)
+    io.emit('chat message', message)
   })
 })
 
