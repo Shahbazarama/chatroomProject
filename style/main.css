@@ -11,9 +11,17 @@
 #sendField {
   position: fixed;
   bottom: 0;
+  margin-bottom: 20px;
 }
 
 .user-ctrl
 {
-  border: none;
+  display: inline;
+  min-width: 0;
+}
+
+.user-ctrl:hover
+{
+  border-radius: 2px;
+  border: solid silver 1px;
 }
