@@ -19,7 +19,9 @@ socket.on('connection', (socket) =>
   })
 })
 
-
+app.get('/', function (req, res) {
+  res.redirect('/views/index.html');
+})
 
 
 
@@ -32,4 +34,6 @@ let port = process.env.PORT || 8000;
 
 http.listen(port, function() {
   console.log('Listening on port', port);
+
+
 });
