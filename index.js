@@ -4,10 +4,12 @@ let http = require('http').Server(app);
 let io = require('socket.io');
 let path = require('path');
 
+app.use(express.static(__dirname + '/js'));
+
 const socket = io(http);
 
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+  res.sendFile(__dirname + '/index.html');
 });
 
 socket.on('connection', (socket) => {
