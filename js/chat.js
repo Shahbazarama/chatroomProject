@@ -10,12 +10,3 @@ $(function () {
      $('#messages').append($('<li>').text(message))
    });
  });
-
-//username funcs.
- $(function(){
-   $('#hide').text($('#txt').val());
-   $('#txt').width($('#hide').width());
- }).on('input', function () {
-   $('#hide').text($('#txt').val());
-   $('#txt').width($('#hide').width());
- });

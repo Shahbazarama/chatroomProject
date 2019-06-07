@@ -27,10 +27,6 @@ body,
   color:#888;
   min-width:10px;
 }
-#hide{
-  display:none;
-  white-space:pre;
-}
 
 .user-ctrl
 {
