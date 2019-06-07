@@ -40,7 +40,7 @@
   // Happens once on page load to display previous messages to new users
   function loadAllMessages() {
     const messages = [];
-    db.collection('Messages').orderBy('date', 'desc').limit(7).get()
+    db.collection('Messages').orderBy('date', 'desc').limit(10).get()
       .then(querySnapshot => {
         querySnapshot.docs.slice().reverse().forEach(doc => {
           messages.push(doc.data());
