@@ -15,6 +15,7 @@
 
   var db = firebase.firestore();
 
+  const chatbox = document.getElementById('chatbox')
   const messagesList = document.getElementById('messages')
   const usernameField = document.getElementById('userField')
   const messageField = document.getElementById('messageField')
@@ -29,7 +30,7 @@
       message: messageText,
       user: username
     }).then(function(docRef) {
-      window.scrollTo(0, document.querySelector("#chatbox").scrollHeight);
+      chatbox.scrollTo(0, document.querySelector("#chatbox").scrollHeight);
       console.log('data sent')
     }).catch(function(e) {
       console.log('error adding doc: ', e)
