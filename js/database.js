@@ -11,6 +11,7 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
   var db = firebase.firestore();
 
   const usernameField = document.getElementById('userField')
@@ -31,4 +32,15 @@
       console.log('error adding doc: ', e)
     })
   })
+
+  db.collection("Messages")
+    .onSnapshot(function(querySnapshot) {
+        var messages = [];
+        querySnapshot.forEach(function(doc) {
+            messages.push(doc.data().message);
+        });
+        console.log("Current messages: ", messages.join(", "));
+    });
+
+
 }());
