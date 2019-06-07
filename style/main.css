@@ -1,17 +1,12 @@
-.chatbox
-{
-  height:70vh;
-  overflow: auto;
+#chatbox {
+  height: 80vh;
+  overflow: scroll;
 }
 
-  #messages {
+#messages {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-ul#messages
-{
 }
 
 #messages li {
