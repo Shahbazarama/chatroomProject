@@ -12,3 +12,8 @@
   position: fixed;
   bottom: 0;
 }
+
+.user-ctrl
+{
+  border: none;
+}
