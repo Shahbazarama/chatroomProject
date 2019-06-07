@@ -1,6 +1,15 @@
 #chatbox {
   height: 80vh;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#formbox {
+  height: 20vh;
+}
+
+h4, h5 {
+  text-align: center;
 }
 
 #messages {
@@ -11,10 +20,51 @@
 
 #messages li {
   padding: 5px 10px;
+  text-overflow: " ";
+  word-wrap: break-word;
+}
+
+#messages li:nth-child(odd) {
+  background: #eee;
 }
 
 #sendField {
-  position: fixed;
   bottom: 0;
-  margin-bottom: 20px;
+  width: 100%;
+}
+
+@media (min-width: 200px) {
+  #userField {
+    width: 40%;
+  }
+  #messageField {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  #userField {
+    width: 20%;
+  }
+  #messageField {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  #userField {
+    width: 20%;
+  }
+  #messageField {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #userField {
+    width: 20%;
+  }
+  #messageField {
+    width: 100%;
+  }
 }
