@@ -16,7 +16,6 @@ ul#messages
 
 #messages li {
   padding: 5px 10px;
-  overflow: auto;
 }
 
 #sendField {
