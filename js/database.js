@@ -45,7 +45,7 @@
           messages.push(doc.data());
           let newMessage = document.createElement('li')
           newMessage.textContent = `${doc.data().user}: ${doc.data().message}`
-          messagesList.prepend(newMessage)
+          messagesList.append(newMessage)
         });
       });
   }
