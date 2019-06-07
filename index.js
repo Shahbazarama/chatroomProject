@@ -6,6 +6,8 @@ let io = require('socket.io')(http);
 let path = require('path');
 
 app.use(express.static(__dirname + '/js'));
+app.use(express.static(__dirname + '/style'));
+
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
