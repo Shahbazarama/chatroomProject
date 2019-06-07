@@ -21,4 +21,15 @@ http.listen(port, function() {
   console.log('Listening on port', port);
 });
 
-module.exports = app
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyC4WDPJbCsdO3FCf7qhm20z3gDfxW07xa0",
+  authDomain: "chatroom-6e20b.firebaseapp.com",
+  databaseURL: "https://chatroom-6e20b.firebaseio.com",
+  projectId: "chatroom-6e20b",
+  storageBucket: "chatroom-6e20b.appspot.com",
+  messagingSenderId: "482219719182",
+  appId: "1:482219719182:web:38ed12a179e3fa94"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
